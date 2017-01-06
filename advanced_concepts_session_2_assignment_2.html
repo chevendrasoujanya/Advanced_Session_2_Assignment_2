@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced Concepts - Session 2 | Assignment 2</title>
+</head>
+<body>
+	<script>
+	//1. Export and Import of Modules
+
+	import { addition, subtraction, multiplication, square } from 'session_2_assignment_2_module';
+
+	console.log("My Addition Result is: " + addition(10, 20));
+	
+	console.log("My Subtraction Result is: " + subtraction(4, 3));
+	
+	console.log("My Multiplication Result is: " + multiplication(10, 5)); 
+	
+	console.log("My Division Result is: " + square(2));
+
+		//2. Inherirance Vehicle Class
+		class vehicle {
+			constructor(name, type) {
+				this.vehicleName = name;
+				this.vehicleType = type;
+			}	
+
+			get getName() {
+				return this.vehicleName;
+			}
+
+			get getType() {
+				return this.vehicleType;
+			}
+		}
+
+		class vehicle1 extends vehicle {
+			constructor(name) {
+				super(name, 'bike');
+			}
+
+			getName() {
+				return 'It is a Bike. ' + super.getName;
+			}
+		}
+
+		let bike = new vehicle1("Enfield");
+		let bikeName = bike.getName();
+		console.log(bikeName);
+
+		class vehicle2 extends vehicle {
+			constructor(name) {
+				super(name, 'volvo');
+			}
+
+			getName() {
+				return 'I am a Bus. ' +super.getName;
+			}
+		}
+
+		let bus = new vehicle2("Isuzu");
+		let busName = bus.getName();
+		console.log(busName);
+
+		class vehicle3 extends vehicle {
+			constructor(name, type) {
+				super(name, type);
+			}
+
+			getName() {
+				return 'I am a Car. ' + super.getName + ' and of a type ' + super.getType;
+			}
+		}
+
+		let car = new vehicle3("Maruthi", "Swift");
+		let carName = car.getName();
+		console.log(carName);
+	</script>
+</body>
+</html>
